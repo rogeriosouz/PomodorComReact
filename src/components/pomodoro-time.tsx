@@ -73,7 +73,6 @@ export function PomodoroTimer(props: Props): JSX.Element {
     ],
   );
 
-  // useEffect = pega toda a modificao que aconteçe e executa uma fuçao -> ele vigia
   useEffect(() => {
     if (working) document.body.classList.add('working');
     if (resting) document.body.classList.remove('working');
@@ -111,7 +110,7 @@ export function PomodoroTimer(props: Props): JSX.Element {
 
       <div className="controls">
         <Button text={'work'} onClick={() => confiWorking()} />
-        <Button text={'reset'} onClick={() => confiResting(false)} />
+        <Button text={'resting'} onClick={() => confiResting(false)} />
         <Button
           className={!working && !resting ? 'hidden' : ''}
           text={timeCounting ? 'pasuse' : 'play'}
@@ -120,9 +119,9 @@ export function PomodoroTimer(props: Props): JSX.Element {
       </div>
 
       <div className="details">
-        <p>clicos cloncluidos: {completedCycles}</p>
-        <p>horas trabalhadas: {secondsToTime(fullWorkingTime)}</p>
-        <p>pomodoros concluidos: {numberOfPomodoros}</p>
+        <p>cloned clinics: {completedCycles}</p>
+        <p>worked hours: {secondsToTime(fullWorkingTime)}</p>
+        <p>completed pomodoros: {numberOfPomodoros}</p>
       </div>
     </div>
   );
